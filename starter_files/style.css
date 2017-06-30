@@ -1,0 +1,304 @@
+/*
+FONT-FAMILY STACK:
+
+Helvetica, Arial, sans-serif
+
+COLORS:
+
+red:    #BA3610
+orange: #E57727
+blue:   #278A96
+black:  #132226
+brown:  #262425
+white:  #F5FFEB
+*/
+
+/*************************/
+/**** GENERIC STYLES *****/
+/*************************/
+.clearfix:after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
+body{
+    font-family: Helvetica, Arial, sans-serif;
+    background-image: url( "./img/bg.jpg" );
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 20px;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    background-color: #F5FFEB;
+    width: 1000px;
+    /** TODO 1: Center the site on the screen
+    Setting the width of a block-level element will prevent it from stretching out to the edges of its container to the left and right. Then, you can set the left and right margins to auto to horizontally center that element within its container. The element will take up the width you specify, then the remaining space will be split evenly between the two margins. */
+    margin: 0px auto;
+    /* this gives us rounded corners */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/*************************/
+/**** HEADER STYLES ******/
+/*************************/
+#site_header{
+    background-color: #262425;
+    padding: 25px;
+}
+
+/* TODO: Arrange the logo and navigation links into a row */
+
+#logo{
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    /* keeps our logo left */
+    float: left;
+    width: 30%;
+}
+
+#main_nav{
+    width: 70%;
+    /* tried floating right but that loses half the nav bar
+       so inline-block pushed the bar down so all of it could be seen */
+    /*float: right;*/
+    display: inline-block;
+    /* without this the buttons flow right after the logo since we're inline-block  */
+    text-align: right;
+}
+
+#main_nav a{
+    display: inline-block;
+    padding: 10px 14px;
+    text-decoration: none;
+    color: white;
+    border-radius: 6px;
+    background-color: #BA3610;
+}
+#main_nav a:hover{
+    background-color: #278A96;
+}
+
+/*********************************/
+/**** CALL TO ACTION STYLES ******/
+/*********************************/
+
+#call_to_action{
+    background-color: #BA3610;
+    padding: 25px;
+}
+
+/**
+    TODO 2:
+    float the block of text
+    and the image into columns
+    The text column should be wider than
+    the image column
+**/
+
+/* without a 'clearfix' above it, none of this crap works */
+
+#call_to_action div{
+    /* floats text left and constrains it's width */
+    float: left;
+    width: 45%;
+}
+
+#call_to_action img{
+    /* floats image right and constrains its size  */
+    float: right;
+    width: 40%;
+}
+
+#call_to_action h1 {
+    color: white;
+}
+
+/* adds some space between the text and the 'our products' button */
+#call_to_action p {
+    color: white;
+    padding-bottom: 20px;
+}
+#call_to_action a{   
+    background-color: #E57727;
+    /* padding increases/decreases button size */
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    /* rounds/smooths the borders */
+    border-radius: 5px;
+}
+#call_to_action a:hover{
+    background-color: #278A96;
+} 
+
+/***************************/
+/**** FEATURED STYLES ******/
+/***************************/
+
+#featured_products{
+
+    /*float: left;*/
+    padding: 20px;
+    margin-bottom: 60px;
+}
+
+#featured_products ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/**
+    TODO 3:
+    float the three list items
+    into equal columns
+    The last column will need some special
+    styling to make things fit correctly
+**/
+
+#featured_products li{
+    /* NOTE: I achieved a similar affect with inline-block with different width/margin but I kept it 
+       floated left so it could be as close to the mockup as possible */    
+    /*display: inline-block;*/
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+    margin-bottom: 25px;
+}
+
+#featured_products li:last-child{
+    /* this one confused me so I had to look at the solution */
+    float: right;
+    margin-right: 0px;
+}
+
+#featured_products li img{
+    border-radius: 4px;
+}
+
+#featured_products h2{
+    padding: 0px;
+    margin-top: 2px;
+    font-size: 25px;
+}
+
+#featured_products p{
+    margin-top: 0;
+}
+
+#featured_products a{
+    color: #E57727;
+}
+
+#featured_products a:hover{
+    color: #278A96;
+}
+
+/*************************/
+/**** FOOTER STYLES ******/
+/*************************/
+
+#site_footer{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#site_footer nav{
+    text-align: center;
+    padding: 20px 0;
+}
+
+#site_footer nav a{
+    display: inline-block;
+    color: white;
+    padding: 0 15px;
+}
+
+#site_footer nav a:hover{
+    color: #132226;
+}
+
+/*******************************/
+/**** PRODUCT PAGE STYLES ******/
+/*******************************/
+
+#products{
+    padding: 20px 0 20px 20px;
+    margin-bottom: 40px;
+}
+
+#products header{   
+    text-align: center; 
+    /* TODO 5: Style the product list header to match the mockup */
+}
+
+#products header p{
+    width: 55%;
+    padding-left: 200px;
+    text-transform: uppercase;
+}
+
+hr {
+    width: 95%;
+    border-top: 3px double #8c8b8b;
+    margin-bottom: 15px;
+}
+
+#products ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/**
+    TODO 3:
+    float the nine list items into a 3 column grid
+    The columns should be equal
+**/
+
+#products li{
+    /* Height is set to stabalize the grid */
+    height: 380px;
+    float: left;
+    width: 31%;
+    margin-right: 2%;
+    margin-bottom: 25px;
+}
+
+#products li img{
+    border-radius: 4px;
+}
+
+#products li h2{
+    padding: 0px;
+    margin-top: 2px;
+    font-size: 25px;
+}
+
+#products p{
+    margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
